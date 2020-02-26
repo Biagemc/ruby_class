@@ -2,14 +2,14 @@ class Store
   attr_reader :type, :color, :price
   attr_writer :color, :price
 
-  def initialize(product_input, color_input, price_input)
-    @type = product_input
-    @color = color_input
-    @price = price_input
+  def initialize(product_input)
+    @type = product_input[:type]
+    @color = product_input[:color]
+    @price = product_input[:price]
   end
 end
 
-banana = Store.new("banana", "yellow", 0.79)
+banana = Store.new({ type: "banana", color: "yellow", price: 0.79 })
 
 p banana.price
 p banana.color
