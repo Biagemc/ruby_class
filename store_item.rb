@@ -7,6 +7,10 @@ class Store
     @color = product_input[:color]
     @price = product_input[:price]
   end
+
+  def print_info
+    p "#{type} has #{color} color, and costs $#{price}."
+  end
 end
 
 banana = Store.new({ type: "banana", color: "yellow", price: 0.79 })
@@ -15,8 +19,4 @@ p banana.price
 p banana.color
 p banana.type
 
-banana.color = "green"
-
-p "this is a new color of banana:"
-p banana.color
-p "___________"
+banana.print_info
